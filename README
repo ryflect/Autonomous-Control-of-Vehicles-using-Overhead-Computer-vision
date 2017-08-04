@@ -1,0 +1,27 @@
+Written by Amit Sinha, Prateek Mallya, V Sri Chakra Kumar
+This project is aimed towards achieving automated vehicle navigation using overhead cameras.
+
+
+Arduino-openloopcontrol:
+This folder contains the arduino code required to receive data from a laptop bluetooth module and translate it into instructions to give the vehicle to move around (like a remote controlled car).
+
+open_loop_botcontrol:
+This folder has the server (laptop in this case) side code required to control the vehicle using arrowkeys.
+It requires SDL (Simple DirectMedia Layer) library - https://www.libsdl.org/
+
+MATLAB simulations:
+This folder has the simulations of MATLAB for path tracking (to make sure a vehicles traverses the path accurately).
+
+controlsystem:
+This has the same functionality as the MATLAB simulation written in c++ for practical usage.
+
+segment:
+This folder contains code used from - http://cs.brown.edu/~pff/segment/
+It is based on the paper - Efficient Graph-Based Image Segmentation Pedro F. Felzenszwalb and Daniel P. Huttenlocher International Journal of Computer Vision, 59(2) September 2004.
+We have modified it to interface with openCV image structures and return a binary image of the largest segment obtained in the image (for extracting the path in which the vehicle can travel).
+
+bluetoothcom:
+This folder contains code to establish a bluetooth connection, encode information (which is to be transmitted from server to arduino) and send it to the Arduino controlled vehicle.
+
+path_evaluate:
+This can take a binary image of a path and return an array of numerical co-ordinates representing the path numerically from start to end
